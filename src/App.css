@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding-bottom: 100px;
+    background-color: #f7f7f7; 
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.header {
+    text-align: center;
+    font-size: 50px;
+    color: #333; 
+}
+
+/** START LOADER STYLE **/
+
+@keyframes bouncing-loader {
+    to {
+        opacity: 0.1;
+        transform: translate3d(0, -16px, 0);
+    }
+}
+
+.bouncing-loader {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.bouncing-loader > div {
+    width: 16px;
+    height: 16px;
+    margin: 3rem 0.2rem;
+    background: #4CAF50; 
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+}
+
+.bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/** END LOADER STYLE **/
+
+/** START HEADER STYLE **/
+
+.title h1 {
+    font-size: 40px;
+    color: #333; 
+}
+
+.filters {
+    width: 530px;
+    max-width: 95%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.sort {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filters input,
+.filters select {
+    font-size: 15px;
+    font-family: inherit;
+    color: #333;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #f7f7f7; 
+    border: 1px solid #ddd; 
+    outline: none;
+}
+
+.filters input::placeholder {
+    color: #ccc; 
+}
+
+/** END HEADER STYLE **/
+
+.posts {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.posts .post {
+    padding: 30px;
+    border: 1px solid #ddd; 
+    color: #333; 
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease; 
+}
+
+.posts .post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover effect */
+}
+
+.posts .post h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: #333; 
+}
+
+.posts .post p {
+    font-size: 16px;
+    color: #666; 
+}
+
+/** END POSTS STYLE **/
+
+@media screen and (max-width: 768px) {
+    .posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .posts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/** Pagination Styles **/
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination .page-button {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: 0;
+    line-height: 1.25;
+    color: #fff; 
+    background-color: #4CAF50; 
+    border: 0 solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination .page-button:hover {
+    background-color: #3e8e41; 
+    color: #fff; 
+}
+
+.pagination .page-button.active {
+    background-color: #3e8e41; 
+    color: #fff; 
+}
+
+.pagination .page-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+/* Responsive design for different screen sizes */
+
+/* For large screens (desktops) */
+@media screen and (min-width: 1200px) {
+  .posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For medium screens (laptops) */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For small screens (tablets) */
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* For extra small screens (mobile phones) */
+@media screen and (max-width: 499px) {
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .filters {
+    flex-direction: column;
+  }
+  .search, .sort {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
