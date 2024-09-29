@@ -18,9 +18,4 @@ Please have a look once !!!
 **Icons** React Icons
 
 **Deployed On** Vercel
-## Lessons Learned
-
-While building this project, I revised learning/use of these things. 
-- React Js & ES6
-- Tailwind CSS
 
